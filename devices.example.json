@@ -1,0 +1,10 @@
+{
+  "light_name": {
+    "mac": "d0:73:d5:xx:xx:xx",
+    "ip": "x.x.x.x"
+  },
+  "light_name2": {
+    "mac": "d0:73:d5:xx:xx:xx",
+    "ip": "x.x.x.x"
+  }
+}
