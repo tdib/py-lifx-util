@@ -13,7 +13,7 @@ except FileNotFoundError as e:
   sys.exit(1)
 
 # Load LIFXLan Light object from extracted data
-selected = sys.argv[1]
+selected = sys.argv[1].lower()
 if not (device_data := devices.get(selected)):
   sys.stderr.write(f'The specified device ({selected}) could not be found.\n')
   sys.exit(1)
