@@ -6,9 +6,6 @@ from time import sleep
 import ctypes
 from util import extract_device_data
 
-# Size of primary monitor
-SCREEN_WIDTH = ctypes.windll.user32.GetSystemMetrics(0)
-SCREEN_HEIGHT = ctypes.windll.user32.GetSystemMetrics(1)
 # HSBK maximum value
 MAX_VALUE = 65535
 # Behaviour configuration
@@ -34,12 +31,10 @@ try:
         # Capture screenshot of screen
         img = ImageGrab.grab()
         # Resize image to be small for faster processing
-        img = img.resize((SCREEN_WIDTH//SCALE_FACTOR, SCREEN_HEIGHT//SCALE_FACTOR))
-        # Convert to numpy array and calculate averages for each colour channel
-        img_mean = np.array(img).mean(axis=0).mean(axis=0).astype('uint8')
+        img = np.array(img.resize((1,1))).ravel()
 
         # Convert RGB to HSV
-        img_hsv = colorsys.rgb_to_hsv(*img_mean)
+        img_hsv = colorsys.rgb_to_hsv(*img)
         img_hsv = np.multiply(img_hsv, MAX_VALUE)
         img_hsv[2] /= 255 if img_hsv[2] >= MAX_VALUE*0.1 else 255*2
 
