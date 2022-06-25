@@ -1,25 +1,9 @@
-import json
-import sys
 from lifxlan import Light
+from util import extract_device_data
 
-# Load devices from json file
-# Uses ./devices.json if no second argument is specified
-try:
-  device_data_file = sys.argv[2] if len(sys.argv) > 2 else './devices.json'
-  with open(device_data_file) as f:
-    devices = json.load(f)
-except FileNotFoundError as e:
-  print('The specified device data file could not be found.')
-  sys.exit(1)
-
-# Load LIFXLan Light object from extracted data
-selected = sys.argv[1].lower()
-if not (device_data := devices.get(selected)):
-  sys.stderr.write(f'The specified device ({selected}) could not be found.\n')
-  sys.exit(1)
+# Extract light data and convert into LIFXLan Light object
+device_data = extract_device_data()
 device = Light(device_data['mac'], device_data['ip'])
-
-
 
 # Toggle light, attempting 5 times before exiting
 attempts = 0
