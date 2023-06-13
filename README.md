@@ -29,3 +29,10 @@ Usage: `python screen_average.py <light_name> <devices_file.json (optional)>`
 Cycle a light through the colours of a rainbow.
 
 Usage: `python rainbow.py <light_name> <devices_file.json (optional)>`
+
+## [light_controller.py](./light_controller.py)
+Alter the HSBK of a light.
+
+Note: This script requires your `devices.json` file to be passed as the last argument. The current functionality does not allow you to adjust the hue, and it will default to 100%. A hue of 0 will be ignored, and the colour will be set with saturation 0%.
+
+Usage: `python light_controller.py <light_name> <brightness 0-100> <temp 0-9000> <hue 0-65535> <devices_file.json>`
