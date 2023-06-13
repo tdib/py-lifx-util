@@ -1,4 +1,6 @@
 *
+!src/
+!src/config/
 !*.py
-!*.example
+!*.example*
 !requirements.txt

@@ -9,8 +9,8 @@ def extract_device_data():
       if sys.argv[-1].endswith('.json'):
         device_data_file = sys.argv[-1]
       else:
-        device_data_file = './devices.json'
-        
+        device_data_file = './config/devices.json'
+
       with open(device_data_file) as f:
         devices = json.load(f)
   except FileNotFoundError as e:
