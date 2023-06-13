@@ -9,8 +9,12 @@ def extract_device_data():
     with open(device_data_file) as f:
       devices = json.load(f)
   except FileNotFoundError as e:
-    print('The specified device data file could not be found.')
+    sys.stderr.write('The specified device data file could not be found.\n')
     sys.exit(1)
+
+  if len(sys.argv) < 2:
+    sys.stderr.write('Usage: python3 <script> <device_name> [device_data_file]\n')
+    sys.exit()
 
   # Extract LIFX light data from device file
   selected = sys.argv[1].lower()
