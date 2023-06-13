@@ -7,7 +7,7 @@ device_data = extract_device_data()
 device = Light(device_data['mac'], device_data['ip'])
 
 if len(sys.argv) < 5:
-    sys.stderr.write('Usage: python3 <script> <device_name> <brightness 0-100> <temp 0-9000> <hue 0-65535> [device_data_file]\n')
+    sys.stderr.write('Usage: python3 light_controller.py <device_name> <brightness 0-100> <temp 0-9000> <hue 0-65535> [device_data_file]\n')
     sys.exit(1)
 
 # value between 0 and 100

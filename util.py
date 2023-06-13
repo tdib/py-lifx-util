@@ -5,12 +5,12 @@ def extract_device_data():
   # Load devices from json file
   # Uses ./devices.json if no second argument is specified
   try:
-    if len(sys.argv) > 2:
+    if len(sys.argv) >= 2:
       if sys.argv[-1].endswith('.json'):
         device_data_file = sys.argv[-1]
       else:
         device_data_file = './devices.json'
-
+        
       with open(device_data_file) as f:
         devices = json.load(f)
   except FileNotFoundError as e:

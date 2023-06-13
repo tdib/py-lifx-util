@@ -45,3 +45,7 @@ Note: This script requires your `devices.json` file to be passed as the last arg
 
 Usage: `python light_controller.py <light_name> <brightness 0-100> <temp 0-9000> <hue 0-65535> [devices_file.json]`
 
+## [change_brightness.py](./change_brightness.py)
+Increase or decrease the brightness of a light.
+
+Usage: `python change_brightness.py <light_name> <increase/decrease> [devices_file.json]`
