@@ -25,6 +25,13 @@ Make a given light change depending on the average colour of your screen.
 
 Usage: `python screen_average.py <light_name> <devices_file.json (optional)>`
 
+## [screen_dominant.py](./screen_dominant.py) (Experimental)
+Colour a given light according to the most dominant colour on your screen.
+
+Note: This is an experimental script and will likely cause your light to flash rapidly.
+
+Usage: `python screen_dominant.py <light_name> <devices_file.json (optional)>`
+
 ## [rainbow.py](./rainbow.py)
 Cycle a light through the colours of a rainbow.
 
@@ -36,3 +43,4 @@ Alter the HSBK of a light.
 Note: This script requires your `devices.json` file to be passed as the last argument. The current functionality does not allow you to adjust the hue, and it will default to 100%. A hue of 0 will be ignored, and the colour will be set with saturation 0%.
 
 Usage: `python light_controller.py <light_name> <brightness 0-100> <temp 0-9000> <hue 0-65535> <devices_file.json>`
+
